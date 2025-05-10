@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<html>
+    <body>
+
+        <!-- Header Section Start  -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-store-alt"></i>
+                <span id="logoName">ShopHub</span>
+            </div>
+    
+            <div class="search-bar">
+                <input type="text" placeholder="Find products...">
+                <div class="vertical-line"></div>
+                <select class="searching">
+                    <option>All departments</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Home & Garden</option>
+                    <option>Toys & Games</option>
+                </select>
+                <button><i class="fas fa-search"></i></button>
+            </div>
+    
+            <div class="icons">
+                <div class="icon">
+                    <i class="far fa-user-circle"></i>
+                    <span>Account</span>
+                </div>
+                <div class="icon">
+                    <i class="far fa-bell"></i>
+                    <span>Alerts</span>
+                </div>
+                <div class="icon">
+                    <i class="far fa-list-alt"></i>
+                    <span>Lists</span>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>Basket</span>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End  -->
+    
+        <!-- Navbar Section Start -->
+        <nav class="main-navbar">
+            <ul class="nav-left">
+                <li><span class="menu-icon">≡&nbsp;</span> Shop Departments</li>
+                <li>Daily Deals</li>
+                <li>Gift Cards</li>
+                <li>Brand Outlet</li>
+                <li>Trending</li>
+                <li>Help Center <i class="fas fa-chevron-down"></i></li>
+            </ul>
+            <ul class="nav-right">
+                <li>English, EUR <i class="fas fa-chevron-down"></i></li>
+                <li>Deliver to <img src="images/images_main/uk-flag.png" alt="United Kingdom" class="flag">&nbsp;<i
+                        class="fas fa-chevron-down"></i></li>
+            </ul>
+        </nav>
+        <!-- Navbar Section End -->
+    
+        <!-- Hero Section Start -->
+        <section class="hero-section">
+            <div class="sidebar">
+                <ul>
+                    <li class="active">Automotive</li>
+                    <li>Fashion & Apparel</li>
+                    <li>Home Furnishings</li>
+                    <li>Tech & Gadgets</li>
+                    <li>DIY & Tools</li>
+                    <li>Outdoor & Sports</li>
+                    <li>Pet Supplies</li>
+                    <li>Industrial Equipment</li>
+                    <li>View All Categories</li>
+                </ul>
+            </div>
+            <div class="main-content">
+                <div class="banner">
+                    <div class="text-content">
+                        <h2 id="latest-head">Summer Sale <br><span id="electronic-head">Up to 50% Off</span></h2>
+                        <a href="deals.html"><button class="learn-more">Shop Now</button></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="user-section">
+                <div class="back-blue">
+                    <div class="user-card">
+                        <img src="images/images_main/user.png" alt="User Profile" class="user-image">
+                        <p class="para">Welcome back <br> member rewards</p>
+                    </div>
+                    <button class="join-btn">Sign Up</button>
+                    <button class="login-btn">Sign In</button>
+                </div>
+    
+                <div class="offer-card orange">
+                    <p>New customer offer: £5 off first order</p>
+                </div>
+    
+                <div class="offer-card blue">
+                    <p>Free delivery on orders over £50</p>
+                </div>
+            </div>
+    
+        </section>
+        <!-- Hero Section End -->
+    
+        <!-- Flash Sale Section Start -->
+        <section class="deals-section">
+            <div class="deals-box">
+                <h3>Flash Sale</h3>
+                <p>Ending soon</p>
+                <div class="countdown" id="countdown">
+                    <div><span id="days">00</span> Days</div>
+                    <div><span id="hours">00</span> Hours</div>
+                    <div><span id="minutes">00</span> Mins</div>
+                    <div><span id="seconds">00</span> Secs</div>
+                </div>
+            </div>
+            <div class="deals-items">
+                <div class="deal-card">
+                    <img src="images/images_main/smartwatch.png" alt="Smart Watches">
+                    <p>Smart Watches</p>
+                    <span class="discount">-30%</span>
+                </div>
+                <div class="deal-card">
+                    <img src="images/images_main/tablet.jpeg" alt="Tablets">
+                    <p>Tablets</p>
+                    <span class="discount">-15%</span>
+                </div>
+                <div class="deal-card">
+                    <img src="images/images_main/dslr.jpeg" alt="DSLR Cameras">
+                    <p>DSLR Cameras</p>
+                    <span class="discount">-25%</span>
+                </div>
+                <div class="deal-card">
+                    <img src="images/images_main/earbuds.jpeg" alt="Wireless Earbuds">
+                    <p>Wireless Earbuds</p>
+                    <span class="discount">-20%</span>
+                </div>
+                <div class="deal-card">
+                    <img src="images/images_main/smartphone.jpeg" alt="Smartphones">
+                    <p>Smartphones</p>
+                    <span class="discount">-40%</span>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Categories Section Start -->
+        <section class="home-outdoor">
+            <div class="left-section">
+                <img src="images/images_main/home-living.jpg" alt="Home and Living">
+                <div class="overlay-content">
+                    <h2>Home &<br>Living</h2>
+                    <a href="deals.html"><button>Browse Now</button></a>
+                </div>
+            </div>
+    
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="images/images_main/sofa-set.webp" alt="Sofa Sets">
+                    <p>Sofa Sets</p>
+                    <span>From £199</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/lighting.jpeg" alt="Lighting">
+                    <p>Lighting</p>
+                    <span>From £19</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/dining.png!w700wp" alt="Dining Sets">
+                    <p>Dining Sets</p>
+                    <span>From £129</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/decor.jpeg" alt="Home Decor">
+                    <p>Home Decor</p>
+                    <span>From £9</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/storage.jpeg" alt="Storage">
+                    <p>Storage</p>
+                    <span>From £29</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/bedding.jpg" alt="Bedding">
+                    <p>Bedding</p>
+                    <span>From £24</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/kitchenware.jpg" alt="Kitchenware">
+                    <p>Kitchenware</p>
+                    <span>From £12</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/garden.jpg" alt="Garden">
+                    <p>Garden</p>
+                    <span>From £15</span>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Tech Section -->
+        <section class="home-outdoor">
+            <div class="left-section">
+                <img src="images/images_main/tech-banner.jpg" alt="Tech and Gadgets">
+                <div class="overlay-content">
+                    <h2>Tech &<br>Gadgets</h2>
+                    <a href="deals.html"><button style="width: 170px;">Explore Now</button></a>
+                </div>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="images/images_main/laptops.jpeg" alt="Laptops">
+                    <p>Laptops</p>
+                    <span>From £299</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/tvs.jpg" alt="TVs">
+                    <p>TVs</p>
+                    <span>From £199</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/gaming.jpg" alt="Gaming">
+                    <p>Gaming</p>
+                    <span>From £49</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/phones.jpeg" alt="Phones">
+                    <p>Phones</p>
+                    <span>From £99</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/audio.jpg" alt="Audio">
+                    <p>Audio</p>
+                    <span>From £29</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/cameras.jpeg" alt="Cameras">
+                    <p>Cameras</p>
+                    <span>From £89</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/wearables.jpg" alt="Wearables">
+                    <p>Wearables</p>
+                    <span>From £59</span>
+                </div>
+                <div class="grid-item">
+                    <img src="images/images_main/accessories.jpg" alt="Accessories">
+                    <p>Accessories</p>
+                    <span>From £9</span>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Bulk Order Section Start -->
+        <section class="supplier-section">
+            <div class="container">
+                <div class="left-content">
+                    <h2>Need items in bulk for your business?</h2>
+                    <p>Get competitive quotes from verified suppliers worldwide with fast response times.</p>
+                </div>
+                <div class="form-container">
+                    <h3>Request wholesale quotes</h3>
+                    <form>
+                        <input type="text" placeholder="What products do you need?" required>
+                        <textarea placeholder="Additional requirements" required></textarea>
+                        <div class="quantity-container">
+                            <input type="number" placeholder="Quantity" required>
+                            <select>
+                                <option>Units</option>
+                                <option>Cases</option>
+                                <option>Pallets</option>
+                                <option>Container</option>
+                            </select>
+                        </div>
+                        <button class="btn-inquiry" type="submit">Get Quotes</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Popular Products Section -->
+        <section class="recommended-items">
+            <h2>Popular Right Now</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <img src="images/images_main/popular/wireless earbuds.avif" alt="Wireless Earbuds">
+                    <p class="dollar">£29.99</p>
+                    <p class="pg-gray">Noise-cancelling wireless earbuds</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/yoga mat.webp" alt="Yoga Mat">
+                    <p class="dollar">£19.95</p>
+                    <p class="pg-gray">Eco-friendly yoga mat</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/air fryer.webp" alt="Air Fryer">
+                    <p class="dollar">£89.00</p>
+                    <p class="pg-gray">Digital air fryer 5.5L</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/backpack.jpg" alt="Backpack">
+                    <p class="dollar">£45.00</p>
+                    <p class="pg-gray">Anti-theft laptop backpack</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/smart scale.jpeg" alt="Smart Scale">
+                    <p class="dollar">£34.99</p>
+                    <p class="pg-gray">Bluetooth smart scale</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/coffee maker.jpeg" alt="Coffee Maker">
+                    <p class="dollar">£59.95</p>
+                    <p class="pg-gray">Espresso coffee machine</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/massage gun.jpg" alt="Massage Gun">
+                    <p class="dollar">£79.99</p>
+                    <p class="pg-gray">Deep tissue massage gun</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/electric toothbrush.jpeg" alt="Electric Toothbrush">
+                    <p class="dollar">£39.99</p>
+                    <p class="pg-gray">Sonic electric toothbrush</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/water bottle.jpeg" alt="Water Bottle">
+                    <p class="dollar">£24.95</p>
+                    <p class="pg-gray">Insulated water bottle</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="item">
+                    <img src="images/images_main/popular/robot vacuum.jpeg" alt="Robot Vacuum">
+                    <p class="dollar">£249.00</p>
+                    <p class="pg-gray">Smart robot vacuum</p>
+                    <div class="rating">★★★★☆</div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Services Section -->
+        <section class="extra-services">
+            <h2>Why Choose Us</h2>
+            <div class="services-container">
+                <div class="service-box">
+                    <div class="service-image">
+                        <img src="images/images_main/services/fast shipping.jpg" alt="Fast Shipping">
+                        <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
+                    </div>
+                    <div class="service-text">
+                        <h4>Fast Shipping</h4>
+                        <p>Next day delivery available</p>
+                    </div>
+                </div>
+    
+                <div class="service-box">
+                    <div class="service-image">
+                        <img src="images/images_main/services/Easy Returns.jpeg" alt="Easy Returns">
+                        <div class="service-icon"><i class="fas fa-exchange-alt"></i></div>
+                    </div>
+                    <div class="service-text">
+                        <h4>Easy Returns</h4>
+                        <p>30-day return policy</p>
+                    </div>
+                </div>
+    
+                <div class="service-box">
+                    <div class="service-image">
+                        <img src="images/images_main/services/Secure Payments.jpg" alt="Secure Payments">
+                        <div class="service-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                    <div class="service-text">
+                        <h4>Secure Payments</h4>
+                        <p>100% payment protection</p>
+                    </div>
+                </div>
+    
+                <div class="service-box">
+                    <div class="service-image">
+                        <img src="images/images_main/services/Support.avif" alt="24/7 Support">
+                        <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    </div>
+                    <div class="service-text">
+                        <h4>24/7 Support</h4>
+                        <p>Dedicated customer service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Global Sellers Section-->
+        <div class="suppliers-section">
+            <h2>Top Global Sellers</h2>
+            <div class="suppliers-container">
+                <div class="supplier">
+                    <img src="images/images_main/flags/germany.png" alt="Germany Flag">
+                    <div class="supplier-info">
+                        <span>Germany</span>
+                        <p>techsupplies.de</p>
+                    </div>
+                </div>
+                <div class="supplier">
+                    <img src="images/images_main/flags/dubai.png" alt="Dubai Flag">
+                    <div class="supplier-info">
+                        <span>Dubai</span>
+                        <p>japanesegoods.jp</p>
+                    </div>
+                </div>
+                <div class="supplier">
+                    <img src="images/images_main/flags/china.png" alt="China Flag">
+                    <div class="supplier-info">
+                        <span>China</span>
+                        <p>canadianexports.ca</p>
+                    </div>
+                </div>
+                <div class="supplier">
+                    <img src="images/images_main/flags/australia.png" alt="australia Flag">
+                    <div class="supplier-info">
+                        <span>Australia</span>
+                        <p>italianstyle.it</p>
+                    </div>
+                </div>
+                <div class="supplier">
+                    <img src="images/images_main/flags/england.png" alt="england Flag">
+                    <div class="supplier-info">
+                        <span>England</span>
+                        <p>koreantech.kr</p>
+                    </div>
+                </div>
+                <div class="supplier">
+                    <img src="images/images_main/flags/france.png" alt="france Flag">
+                    <div class="supplier-info">
+                        <span>France</span>
+                        <p>spanishproducts.es</p>
+                    </div>
+                </div>
+                <div class="supplier">
+                    <img src="images/images_main/flags/itlay.png" alt="itlay Flag">
+                    <div class="supplier-info">
+                        <span>Itlay</span>
+                        <p>indiancrafts.in</p>
+                    </div>
+                </div>
+                <div class="supplier">
+                    <img src="images/images_main/flags/russia.png" alt="russia Flag">
+                    <div class="supplier-info">
+                        <span>Russia</span>
+                        <p>brazilianexports.com.br</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Newsletter Section-->
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <h2>Join Our Community</h2>
+                <p>Subscribe to get exclusive deals, product updates and shopping tips</p>
+                <div class="newsletter-form">
+                    <div class="input-group">
+                        <i class="far fa-envelope"></i>&nbsp;&nbsp;
+                        <input type="email" placeholder="Your email address">
+                    </div>
+                    <button class="subscribe-btn">Subscribe</button>
+                </div>
+                <div class="privacy-note">
+                    <input type="checkbox" id="privacy-check">
+                    <label for="privacy-check">I agree to the privacy policy</label>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="footer-container">
+                <!-- Brand & Info -->
+                <div class="footer-brand">
+                    <h2><i class="fas fa-store-alt"></i>&nbsp; ShopHub</h2>
+                    <p>Your one-stop shop for all your needs. Quality products at competitive prices with excellent customer service.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone-alt"></i> +44 123 456 7890</p>
+                        <p><i class="fas fa-envelope"></i> support@shophub.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <i class="icons-style fab fa-facebook-f"></i>
+                        <i class="icons-style fab fa-twitter"></i>
+                        <i class="icons-style fab fa-pinterest"></i>
+                        <i class="icons-style fab fa-youtube"></i>
+                        <i class="icons-style fab fa-instagram"></i>
+                    </div>
+                </div>
+    
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Shop</h3>
+                        <ul>
+                            <li><a href="#">All Categories</a></li>
+                            <li><a href="#">Daily Deals</a></li>
+                            <li><a href="#">New Arrivals</a></li>
+                            <li><a href="#">Trending Now</a></li>
+                            <li><a href="#">Clearance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Returns & Exchanges</a></li>
+                            <li><a href="#">Product Care</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Press Inquiries</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>My Account</h3>
+                        <ul>
+                            <li><a href="#">Account Dashboard</a></li>
+                            <li><a href="#">Order History</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Address Book</a></li>
+                            <li><a href="#">Payment Methods</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <!-- Payment Methods -->
+                <div class="footer-payments">
+                    <h3>We Accept</h3>
+                    <div class="payment-methods">
+                        <img src="images/images_main/payments/visa.png" alt="Visa">
+                        <img src="images/images_main/payments/mastercard.webp" alt="Mastercard">
+                        <img src="images/images_main/payments/amex.png" alt="American Express">
+                        <img src="images/images_main/payments/paypal.png" alt="PayPal">
+                        <img src="images/images_main/payments/applepay.webp" alt="Apple Pay">
+                    </div>
+                    <div class="app-download">
+                        <h3>Shop On The Go</h3>
+                        <img src="images/images_main/appstore.png" alt="App Store">
+                        <img src="images/images_main/googlePlay.png" alt="Google Play">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2023 ShopHub. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies</a>
+            </div>
+            <div class="footer-language">
+                <img src="images/images_main/uk-flag.png" alt="United Kingdom">
+                <span>United Kingdom</span> &nbsp;<i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
+    
+        <script src="script.js"></script>
+    </body>
+</html>

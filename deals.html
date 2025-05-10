@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .main-div {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1400px;
+            width: 95%;
+            border: 1px solid #DEE2E7;
+            border-radius: 6px;
+            margin: 1rem auto;
+            gap: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header Section Start -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-store-alt"></i>
+            <span id="logoName">ShopHub</span>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Find products...">
+            <div class="vertical-line"></div>
+            <select class="searching">
+                <option>All departments</option>
+                <option>Electronics</option>
+                <option>Fashion</option>
+                <option>Home & Garden</option>
+            </select>
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="icons">
+            <div class="icon">
+                <i class="far fa-user-circle"></i>
+                <span>Account</span>
+            </div>
+            <div class="icon">
+                <i class="far fa-bell"></i>
+                <span>Alerts</span>
+            </div>
+            <div class="icon">
+                <i class="far fa-list-alt"></i>
+                <span>Lists</span>
+            </div>
+            <div class="icon">
+                <i class="fas fa-shopping-basket"></i>
+                <span>Basket</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Navbar Section Start -->
+    <nav class="main-navbar">
+        <ul class="nav-left">
+            <li><span class="menu-icon">≡&nbsp;</span> Shop Departments</li>
+            <li>Daily Deals</li>
+            <li>Gift Cards</li>
+            <li>Brand Outlet</li>
+            <li>Trending</li>
+            <li>Help Center <i class="fas fa-chevron-down"></i></li>
+        </ul>
+        <ul class="nav-right">
+            <li>English, EUR <i class="fas fa-chevron-down"></i></li>
+            <li>Deliver to <img src="images/images_main/uk-flag.png" alt="United Kingdom" class="flag">&nbsp;<i
+                    class="fas fa-chevron-down"></i></li>
+        </ul>
+    </nav>
+    <!-- Navbar Section End -->
+
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">home-living</a></li>
+        <li><a href="#">Cameras</a></li>
+        <li>Digital Cameras</li>
+    </ul>
+
+    <!-- Details section start -->
+    <div class="main-div">
+        <div class="sidebar">
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Category</h3>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <ul class="filter-options">
+                    <li><input type="checkbox" id="home-accessory"><label for="home-accessory">Home accessory</label></li>
+                    <li><input type="checkbox" id="home-living"><label for="home-living">Home living</label></li>
+                    <li><input type="checkbox" id="home-outdoor"><label for="home-outdoor">Home outdoor</label></li>
+                    <li><input type="checkbox" id="modern-tech"><label for="modern-tech">Modern tech</label></li>
+                </ul>
+                <a href="#" class="see-all">See all</a>
+                <hr>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Brands</h3>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <ul class="filter-options">
+                    <li><input type="checkbox" id="Cozy-Corner"><label for="Cozy-Corner">Cozy Corner</label></li>
+                    <li><input type="checkbox" id="Decor-Dazzle"><label for="Decor-Dazzle">Decor Dazzle</label></li>
+                    <li><input type="checkbox" id="Stylish-Sanctuary"><label for="Stylish-Sanctuary">Stylish Sanctuary</label></li>
+                    <li><input type="checkbox" id="Home-Couture"><label for="Home-Couture">Home Couture</label></li>
+                </ul>
+                <a href="#" class="see-all">See all</a>
+                <hr>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Price range</h3>
+                </div>
+                <div class="price-range-container">
+                    <div class="slider-container">
+                        <input type="range" id="min-price" min="0" max="2000" value="0" step="10">
+                        <input type="range" id="max-price" min="0" max="2000" value="1000" step="10">
+                    </div>
+                    <div class="price-inputs">
+                        <div class="price-input">
+                            <span>£</span>
+                            <input type="number" id="min-value" value="0" min="0" max="1990">
+                        </div>
+                        <span class="price-separator">-</span>
+                        <div class="price-input">
+                            <span>£</span>
+                            <input type="number" id="max-value" value="1000" min="10" max="2000">
+                        </div>
+                    </div>
+                    <button class="apply-btn">Apply</button>
+                </div>
+                <hr>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Condition</h3>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="condition-filter">
+                    <label class="radio-label">
+                        <input type="radio" name="condition" value="any" checked>
+                        <span class="radio-custom"></span>
+                        Any
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="condition" value="refurbished">
+                        <span class="radio-custom"></span>
+                        Refurbished
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="condition" value="brand-new">
+                        <span class="radio-custom"></span>
+                        Brand new
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="condition" value="old-items">
+                        <span class="radio-custom"></span>
+                        Old items
+                    </label>
+                </div>
+                <hr>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Ratings</h3>
+                    <i class="fas fa-chevron-down arrow-icon"></i>
+                </div>
+                <div class="rating-filter">
+                    <label class="rating-label">
+                        <input type="checkbox">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">5 Stars</span>
+                    </label>
+                    <label class="rating-label">
+                        <input type="checkbox">
+                        <span class="stars">★★★★<span class="gray-star">★</span></span>
+                        <span class="rating-text">4 Stars & up</span>
+                    </label>
+                    <label class="rating-label">
+                        <input type="checkbox">
+                        <span class="stars">★★★<span class="gray-star">★★</span></span>
+                        <span class="rating-text">3 Stars & up</span>
+                    </label>
+                    <label class="rating-label">
+                        <input type="checkbox">
+                        <span class="stars">★★<span class="gray-star">★★★</span></span>
+                        <span class="rating-text">2 Stars & up</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right section of products -->
+        <div class="products">
+            <div class="items-header">
+                <p><strong>12,911</strong> items in <strong>Chair Table</strong></p>
+                <div class="filters">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span> Verified only
+                    </label>
+                    <select class="sort-select">
+                        <option selected>Featured</option>
+                        <option>Newest</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Best Selling</option>
+                    </select>
+                    <div class="view-toggle">
+                        <button class="grid-view active" title="Grid view">▦</button>
+                        <button class="list-view" title="List view">≡</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-badge">-15%</div>
+                    <button class="wishlist-btn">❤</button>
+                    <img src="images/images1/chair table.avif" alt="Chair table">
+                    <div class="product-info">
+                        <h3>Booth table and chairs made from white plastic</h3>
+                        <div class="price-container">
+                            <span class="price">£998.00</span>
+                            <span class="old-price">£1,128.00</span>
+                        </div>
+                        <div class="rating-container">
+                            <div class="stars" data-rating="4.5">
+                                ★★★★★
+                            </div>
+                            <span class="review-count">(154)</span>
+                        </div>
+                        <p class="shipping-info">Free Shipping</p>
+                        <p class="product-desc">Booth table and chairs made from white plastic. Good Quality</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <button class="wishlist-btn">❤</button>
+                    <img src="images/images1/curtains.webp" alt="curtains">
+                    <div class="product-info">
+                        <h3>Curtains are decorative fabric panels, usually made of cloth - Black color</h3>
+                        <div class="price-container">
+                            <span class="price">£399.00</span>
+                        </div>
+                        <div class="rating-container">
+                            <div class="stars" data-rating="5">
+                                ★★★★★
+                            </div>
+                            <span class="review-count">(287)</span>
+                        </div>
+                        <p class="shipping-info">Free Shipping</p>
+                        <p class="product-desc">Waterproof curtains with great Quality and texture.</p>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more product cards as needed -->
+            </div>
+
+            <div class="pagination-container">
+                <div class="items-per-page">
+                    <label for="itemsPerPage">Show</label>
+                    <select id="itemsPerPage">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <ul class="pagination">
+                    <li class="page-nav prev"><i class="fas fa-chevron-left"></i></li>
+                    <li class="page active">1</li>
+                    <li class="page">2</li>
+                    <li class="page">3</li>
+                    <li class="page-nav next"><i class="fas fa-chevron-right"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2>Join Our Community</h2>
+            <p>Subscribe to get exclusive deals, product updates and shopping tips</p>
+            <form class="newsletter-form">
+                <div class="input-group">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Your email address" required>
+                </div>
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+            <div class="privacy-note">
+                <input type="checkbox" id="privacy-check" required>
+                <label for="privacy-check">I agree to the privacy policy</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2><i class="fas fa-store-alt"></i> ShopHub</h2>
+                <p>Your one-stop shop for all your needs. Quality products at competitive prices.</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> +44 123 456 7890</p>
+                    <p><i class="fas fa-envelope"></i> support@shophub.com</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">All Categories</a></li>
+                        <li><a href="#">Daily Deals</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Trending Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>My Account</h3>
+                    <ul>
+                        <li><a href="#">Account Dashboard</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Address Book</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-app">
+                <h3>Get Our App</h3>
+                <div class="app-download">
+                    <a href="#"><img src="images/images_main/appstore.png" alt="Download on App Store"></a>
+                    <a href="#"><img src="images/images_main/googlePlay.png" alt="Get it on Google Play"></a>
+                </div>
+                <h3>Payment Methods</h3>
+                <div class="payment-methods">
+                    <img src="images/images_main/payments/visa.png" alt="Visa">
+                    <img src="images/images_main/payments/mastercard.webp" alt="Mastercard">
+                    <img src="images/images_main/payments/paypal.png" alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>© 2023 ShopHub. All rights reserved.</p>
+        <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookies</a>
+        </div>
+        <div class="footer-language">
+            <img src="images/images_main/uk-flag.png" alt="English">
+            <span>English</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLeft = document.querySelector('.nav-left');
+            
+            if (menuIcon && navLeft) {
+                menuIcon.addEventListener('click', function() {
+                    navLeft.classList.toggle('active');
+                    this.textContent = navLeft.classList.contains('active') ? '✕' : '≡';
+                });
+            }
+
+            // Product rating system
+            document.querySelectorAll('.stars').forEach(stars => {
+                const rating = parseFloat(stars.getAttribute('data-rating'));
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                
+                let starsHTML = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= fullStars) {
+                        starsHTML += '★';
+                    } else if (i === fullStars + 1 && hasHalfStar) {
+                        starsHTML += '½';
+                    } else {
+                        starsHTML += '☆';
+                    }
+                }
+                stars.innerHTML = starsHTML;
+            });
+
+            // Wishlist button toggle
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                    if (this.classList.contains('active')) {
+                        this.innerHTML = '❤';
+                        // Add to wishlist functionality
+                    } else {
+                        this.innerHTML = '♡';
+                        // Remove from wishlist functionality
+                    }
+                });
+            });
+
+            // Price range slider
+            const minPrice = document.getElementById('min-price');
+            const maxPrice = document.getElementById('max-price');
+            const minValue = document.getElementById('min-value');
+            const maxValue = document.getElementById('max-value');
+
+            function updatePriceValues() {
+                minValue.value = minPrice.value;
+                maxValue.value = maxPrice.value;
+            }
+
+            if (minPrice && maxPrice && minValue && maxValue) {
+                minPrice.addEventListener('input', updatePriceValues);
+                maxPrice.addEventListener('input', updatePriceValues);
+                minValue.addEventListener('change', function() {
+                    minPrice.value = this.value;
+                });
+                maxValue.addEventListener('change', function() {
+                    maxPrice.value = this.value;
+                });
+            }
+
+            // View toggle (grid/list)
+            const gridViewBtn = document.querySelector('.grid-view');
+            const listViewBtn = document.querySelector('.list-view');
+            const productGrid = document.querySelector('.product-grid');
+
+            if (gridViewBtn && listViewBtn && productGrid) {
+                gridViewBtn.addEventListener('click', function() {
+                    productGrid.classList.remove('list-view');
+                    gridViewBtn.classList.add('active');
+                    listViewBtn.classList.remove('active');
+                });
+
+                listViewBtn.addEventListener('click', function() {
+                    productGrid.classList.add('list-view');
+                    listViewBtn.classList.add('active');
+                    gridViewBtn.classList.remove('active');
+                });
+            }
+
+            // Add to cart functionality
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const cartCount = document.querySelector('.cart-count');
+                    let count = parseInt(cartCount.textContent) || 0;
+                    cartCount.textContent = count + 1;
+                    cartCount.style.display = 'inline-block';
+                    // Add actual cart functionality here
+                });
+            });
+
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    const privacyChecked = document.getElementById('privacy-check').checked;
+                    
+                    if (!privacyChecked) {
+                        alert('Please agree to the privacy policy');
+                        return;
+                    }
+                    
+                    // Submit form data here
+                    console.log('Subscribing email:', email);
+                    alert('Thank you for subscribing!');
+                    this.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        :root {
+            --primary-color: #0D6EFD;
+            --secondary-color: #6C757D;
+            --accent-color: #FFC107;
+            --light-gray: #F8F9FA;
+            --dark-gray: #343A40;
+            --border-color: #DEE2E7;
+            --text-color: #212529;
+            --discount-color: #DC3545;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .details-sec-start {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 95%;
+            max-width: 1400px;
+            margin: 1rem auto;
+            gap: 20px;
+        }
+
+        /* Sidebar (Left Side) */
+        .sidebar {
+            width: 25%;
+            min-width: 250px;
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: var(--dark-gray);
+            cursor: pointer;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-list input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .see-all {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .see-all:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 20px 0;
+        }
+
+        /* Products Section (Right Side) */
+        .products {
+            width: 72%;
+            flex-grow: 1;
+        }
+
+        .items-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filters {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checkbox-container input {
+            margin-right: 8px;
+        }
+
+        select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .view-toggle button {
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .view-toggle button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Individual Product Cards */
+        .product-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            padding-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Product Image */
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            padding: 15px;
+            background: var(--light-gray);
+        }
+
+        /* Product Info */
+        .product-info {
+            padding: 0 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Price Container (Price on Left, Like on Right) */
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        /* Price Styling */
+        .price {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--secondary-color);
+            font-size: 14px;
+            margin-left: 5px;
+        }
+
+        .discount {
+            color: var(--discount-color);
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        /* Like Icon */
+        .like-icon {
+            color: #ccc;
+            font-size: 18px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .like-icon:hover, .like-icon.active {
+            color: red;
+        }
+
+        /* Rating Stars */
+        .rating {
+            font-size: 14px;
+            color: var(--accent-color);
+            margin: 8px 0;
+        }
+
+        .rating-count {
+            color: var(--secondary-color);
+            font-size: 12px;
+        }
+
+        /* Product Description */
+        .description {
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Pagination */
+        .pagination-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 5px;
+        }
+
+        .pagination li {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pagination li:hover {
+            background-color: var(--light-gray);
+        }
+
+        .pagination li.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .pagination li img {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .details-sec-start {
+                flex-direction: column;
+            }
+            
+            .sidebar, .products {
+                width: 100%;
+            }
+            
+            .sidebar {
+                position: static;
+                margin-bottom: 20px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .items-header, .filters {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .pagination-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section Start  -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="logoName">ShopHub</span>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <div class="vertical-line"></div>
+            <select class="searching">
+                <option>All category</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Home & Kitchen</option>
+            </select>
+            <button>Search</button>
+        </div>
+
+        <div class="icons">
+            <div class="icon">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </div>
+            <div class="icon">
+                <i class="fas fa-comment"></i>
+                <span>Message</span>
+            </div>
+            <div class="icon">
+                <i class="fas fa-heart"></i>
+                <span>Orders</span>
+            </div>
+            <div class="icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span>My cart</span>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End  -->
+
+    <!-- Navbar Section Start -->
+    <nav class="main-navbar">
+        <ul class="nav-left">
+            <li><span class="menu-icon">☰&nbsp;</span> All Category</li>
+            <li>Hot Offers</li>
+            <li>Gift Boxes</li>
+            <li>Projects</li>
+            <li>Menu Item</li>
+            <li>Help <i class="fas fa-chevron-down"></i></li>
+        </ul>
+        <ul class="nav-right">
+            <li>English, USD <i class="fas fa-chevron-down"></i></li>
+            <li>Ship to <img src="images/images_main/flags/germany.png" alt="Germany" class="flag">&nbsp;<i
+                    class="fas fa-chevron-down"></i></li>
+        </ul>
+    </nav>
+    <!-- Navbar Section End -->
+
+    <ul class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Clothings</a></li>
+        <li><a href="#">Men's wear</a></li>
+        <li><a href="#">Summer clothing</a></li>
+    </ul>
+
+    <!-- Details section start -->
+    <div class="details-sec-start">
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <h3>Category</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="sidebar-list">
+                    <li>Mobile accessory</li>
+                    <li>Electronics</li>
+                    <li>Smartphones</li>
+                    <li>Modern tech</li>
+                </ul>
+                <a href="#" class="see-all">See all</a>
+            </div>
+            
+            <hr>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <h3>Brands</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="sidebar-list">
+                    <li><input type="checkbox" id="samsung"><label for="samsung">Samsung</label></li>
+                    <li><input type="checkbox" id="apple"><label for="apple">Apple</label></li>
+                    <li><input type="checkbox" id="huawei"><label for="huawei">Huawei</label></li>
+                    <li><input type="checkbox" id="poco"><label for="poco">Poco</label></li>
+                    <li><input type="checkbox" id="lenovo"><label for="lenovo">Lenovo</label></li>
+                </ul>
+                <a href="#" class="see-all">See all</a>
+            </div>
+            
+            <hr>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <h3>Features</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="sidebar-list">
+                    <li><input type="checkbox" id="metallic"><label for="metallic">Metallic</label></li>
+                    <li><input type="checkbox" id="plastic"><label for="plastic">Plastic cover</label></li>
+                    <li><input type="checkbox" id="ram"><label for="ram">8GB RAM</label></li>
+                    <li><input type="checkbox" id="power"><label for="power">Super power</label></li>
+                    <li><input type="checkbox" id="memory"><label for="memory">Large Memory</label></li>
+                </ul>
+                <a href="#" class="see-all">See all</a>
+            </div>
+            
+            <hr>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <h3>Price Range</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <!-- Price range slider would go here -->
+                <div style="padding: 15px 0;">
+                    <input type="range" min="0" max="1000" value="500" style="width: 100%;">
+                    <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <span>£0</span>
+                        <span>£1000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <h3>Condition</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="sidebar-list">
+                    <li><input type="radio" name="condition" id="new"><label for="new">New</label></li>
+                    <li><input type="radio" name="condition" id="used"><label for="used">Used</label></li>
+                    <li><input type="radio" name="condition" id="refurbished"><label for="refurbished">Refurbished</label></li>
+                </ul>
+            </div>
+            
+            <hr>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">
+                    <h3>Ratings</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="sidebar-list">
+                    <li><input type="checkbox" id="5star"><label for="5star">★★★★★</label></li>
+                    <li><input type="checkbox" id="4star"><label for="4star">★★★★☆</label></li>
+                    <li><input type="checkbox" id="3star"><label for="3star">★★★☆☆</label></li>
+                    <li><input type="checkbox" id="2star"><label for="2star">★★☆☆☆</label></li>
+                    <li><input type="checkbox" id="1star"><label for="1star">★☆☆☆☆</label></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right section of products -->
+        <div class="products">
+            <div class="items-header">
+                <p><strong>12,911</strong> items in <strong>Mobile accessory</strong></p>
+
+                <div class="filters">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span> Verified only
+                    </label>
+
+                    <select>
+                        <option selected>Featured</option>
+                        <option>Newest</option>
+                        <option>Best Selling</option>
+                    </select>
+
+                    <div class="view-toggle">
+                        <button class="grid-view active">▦ Grid</button>
+                        <button class="list-view">≡ List</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <img src="images/images2/1.png" alt="GoPro HERO6 4K Action Camera">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£99.50</span>
+                                <span class="old-price">£1128.00</span>
+                                <span class="discount">(91% off)</span>
+                            </div>
+                            <i class="fas fa-heart like-icon"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★★ <span class="rating-count">7.5</span>
+                        </div>
+                        <p class="description">GoPro HERO6 4K Action Camera - Black with waterproof case and accessories included</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <img src="images/images2/2.png" alt="Canon EOS Rebel Camera">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£599.00</span>
+                                <span class="old-price">£899.00</span>
+                                <span class="discount">(33% off)</span>
+                            </div>
+                            <i class="fas fa-heart like-icon"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span class="rating-count">4.8</span>
+                        </div>
+                        <p class="description">Canon EOS Rebel T7 DSLR Camera with 18-55mm Lens Kit, 24.1MP</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <img src="images/images2/3.png" alt="Sony WH-1000XM4 Headphones">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£349.99</span>
+                            </div>
+                            <i class="fas fa-heart like-icon active"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★★ <span class="rating-count">9.2</span>
+                        </div>
+                        <p class="description">Sony WH-1000XM4 Wireless Noise Cancelling Overhead Headphones</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <img src="images/images2/4.png" alt="Apple Watch Series 7">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£399.00</span>
+                                <span class="old-price">£429.00</span>
+                            </div>
+                            <i class="fas fa-heart like-icon"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span class="rating-count">8.1</span>
+                        </div>
+                        <p class="description">Apple Watch Series 7 GPS, 45mm Midnight Aluminum Case</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                    <img src="images/images2/5.png" alt="Samsung Galaxy Tab S7">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£549.99</span>
+                                <span class="old-price">£649.99</span>
+                            </div>
+                            <i class="fas fa-heart like-icon"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★★ <span class="rating-count">8.7</span>
+                        </div>
+                        <p class="description">Samsung Galaxy Tab S7 11-inch 128GB WiFi Tablet with S Pen</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card">
+                    <img src="images/images2/6.png" alt="Bose QuietComfort Earbuds">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£279.00</span>
+                            </div>
+                            <i class="fas fa-heart like-icon"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span class="rating-count">7.9</span>
+                        </div>
+                        <p class="description">Bose QuietComfort Earbuds - Wireless Bluetooth Noise Cancelling</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="product-card">
+                    <img src="images/images2/7.png" alt="DJI Mavic Air 2">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£799.00</span>
+                                <span class="old-price">£999.00</span>
+                            </div>
+                            <i class="fas fa-heart like-icon"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★★ <span class="rating-count">9.5</span>
+                        </div>
+                        <p class="description">DJI Mavic Air 2 Fly More Combo - Drone with 4K Camera</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="product-card">
+                    <img src="images/images2/8.png" alt="PlayStation 5 Console">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£499.99</span>
+                            </div>
+                            <i class="fas fa-heart like-icon active"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★★ <span class="rating-count">9.8</span>
+                        </div>
+                        <p class="description">PlayStation 5 Console (Disc Version) with Wireless Controller</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 9 -->
+                <div class="product-card">
+                    <img src="images/images2/9.png" alt="Nintendo Switch OLED">
+                    <div class="product-info">
+                        <div class="price-container">
+                            <div>
+                                <span class="price">£349.99</span>
+                            </div>
+                            <i class="fas fa-heart like-icon"></i>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span class="rating-count">8.4</span>
+                        </div>
+                        <p class="description">Nintendo Switch OLED Model with White Joy-Con Controllers</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+                <div>
+                    <label for="itemsPerPage">Show</label>
+                    <select id="itemsPerPage">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <ul class="pagination">
+                    <li class="prev"><img src="images/images1/icon1.png" alt="Previous"></li>
+                    <li class="page active">1</li>
+                    <li class="page">2</li>
+                    <li class="page">3</li>
+                    <li class="page">4</li>
+                    <li class="page">...</li>
+                    <li class="page">10</li>
+                    <li class="next"><img src="images/images1/icon2.png" style="transform: rotate(180deg);" alt="Next"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- details section ending -->
+
+    <!-- Footer  and subscription Section Start -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2>Subscribe on our newsletter</h2>
+            <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+            <div class="newsletter-form">
+                <div class="input-group">
+                    <i class="far fa-envelope"></i>&nbsp;&nbsp;
+                    <input type="email" placeholder="Email">
+                </div>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Brand & Info -->
+            <div class="footer-brand">
+                <h2><i class="fas fa-shopping-bag"></i>&nbsp; ShopHub</h2>
+                <p>Best information about the company goes here but now lorem ipsum is</p>
+                <div class="social-icons">
+                    <i class="icons-style fab fa-facebook"></i>
+                    <i class="icons-style fab fa-twitter"></i>
+                    <i class="icons-style fab fa-linkedin"></i>
+                    <i class="icons-style fab fa-youtube"></i>
+                    <i class="icons-style fab fa-instagram"></i>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Find store</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Partnership</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Find store</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Money Refund</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>For users</h3>
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">My Orders</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Get App Section -->
+            <div class="footer-app">
+                <h3>Get app</h3>
+                <img src="images/images_main/appstore.png" alt="App Store">
+                <img src="images/images_main/googlePlay.png" alt="Google Play">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>© 2023 Ecommerce.</p>
+        <div class="footer-language">
+            <img src="images/images_main/uk-flag.png" alt="Flag">
+            <span>English</span> &nbsp;<i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
+    <!-- Footer Section End -->
+
+    <script>
+        // Toggle like icon
+        document.querySelectorAll('.like-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        // Pagination
+        document.querySelectorAll('.pagination .page').forEach(page => {
+            page.addEventListener('click', function() {
+                document.querySelectorAll('.pagination .page').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // View toggle
+        document.querySelector('.grid-view').addEventListener('click', function() {
+            document.querySelector('.list-view').classList.remove('active');
+            this.classList.add('active');
+            document.querySelector('.product-grid').style.gridTemplateColumns = 'repeat(auto-fill, minmax(250px, 1fr))';
+        });
+
+        document.querySelector('.list-view').addEventListener('click', function() {
+            document.querySelector('.grid-view').classList.remove('active');
+            this.classList.add('active');
+            document.querySelector('.product-grid').style.gridTemplateColumns = '1fr';
+            
+            // Add list view specific styles
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.style.flexDirection = 'row';
+                card.style.height = 'auto';
+                card.querySelector('img').style.width = '200px';
+                card.querySelector('img').style.height = '200px';
+            });
+        });
+
+        // Sidebar accordion functionality
+        document.querySelectorAll('.sidebar-title').forEach(title => {
+            title.addEventListener('click', function() {
+                const section = this.parentElement;
+                const content = Array.from(section.children).filter(child => 
+                    child !== this && child.tagName !== 'HR'
+                );
+                
+                content.forEach(item => {
+                    item.style.display = item.style.display === 'none' ? 'block' : 'none';
+                });
+                
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>
